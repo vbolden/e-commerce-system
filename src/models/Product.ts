@@ -9,7 +9,7 @@ export class Product {
     sku: string;
     reviews: string[];
 
-    constructor(id: number, title: string, description: string, category: string, price: number, discount: number, rating: number, sku: string, reviews: string[]){
+    constructor(id: number, title: string, description: string, category: string, price: number, discount: number, rating: number, sku: string, reviews: string[]) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -20,4 +20,12 @@ export class Product {
         this.sku = sku;
         this.reviews = reviews;
     }
+
+    displayDetails(): string {
+        return ``
+    }
+
+    getPriceWithDiscount(): number {
+        return this.price - (this.price * this.discount)
+    } 
 }
