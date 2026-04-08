@@ -15,13 +15,7 @@ async function loadProduct() {
             data.discountPercentage
         );
 
-        const discountedPrice = product.getPriceWithDiscount();
-        const tax = calculateTax(discountedPrice, product.category);
-        const finalPrice = discountedPrice + tax;
-
         console.log(product.displayDetails());
-        console.log(`Price with discount: $${discountedPrice.toFixed(2)}`)
-        console.log(`Final Price with tax: $${finalPrice.toFixed(2)}`)
 
     } catch (error: any) {
         if (error instanceof CustomError) {
