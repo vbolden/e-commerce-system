@@ -21,5 +21,5 @@ export class Product {
 
     getPriceWithDiscount(): number {
         return this.price - calculateDiscount(this.price, this.discountPercentage)
-    } 
+    }
 }
