@@ -17,5 +17,3 @@ export async function getProductById(id:number) {
         }
     }
 }
-
-getProductById(1);
