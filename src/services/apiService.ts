@@ -1,8 +1,8 @@
 import { CustomError } from "../utils/errorHandler.js";
 
-export async function getProductById(id:number) {
+export async function getProduct() {
     try {
-        const response = await fetch(`https://dummyjson.com/products/${id}`)
+        const response = await fetch(`https://dummyjson.com/products/`)
         if(!response) {
             throw new CustomError("Product not found", "APIError");
         }
