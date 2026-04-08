@@ -1,5 +1,5 @@
 import { calculateDiscount } from "../utils/discountCalculator.js";
-import { calculateTax } from "../utils/taxCalculator.ts";
+import { calculateTax } from "../utils/taxCalculator.js";
 
 export class Product {
     id: number;
