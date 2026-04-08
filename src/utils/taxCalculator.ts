@@ -1,11 +1,7 @@
-import { Product } from "../models/Product.js";
-
 export function calculateTax(price: number, category: string) {
-    if(category === "grocery") {
-        const groceryTax = price * 0.03
-        return groceryTax
+    if(category === "groceries") {
+        return price * 0.03
     } else {
-        const defaultTax = price * 0.0475
-        return defaultTax
+        return price * 0.0475
     }
 }
