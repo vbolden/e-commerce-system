@@ -1,7 +1,7 @@
-import { Product } from "./models/Product.ts";
-import { calculateTax } from "./utils/taxCalculator.ts";
-import { getProduct } from "./services/apiService.ts";
-import { CustomError } from "./utils/errorHandler.ts";
+import { Product } from "./models/Product.js";
+import { calculateTax } from "./utils/taxCalculator.js";
+import { getProduct } from "./services/apiService.js";
+import { CustomError } from "./utils/errorHandler.js";
 
 async function loadProduct() {
     try {
