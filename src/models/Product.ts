@@ -1,4 +1,5 @@
 import { calculateDiscount } from "../utils/discountCalculator.js";
+import { calculateTax } from "../utils/taxCalculator.ts";
 
 export class Product {
     id: number;
@@ -16,7 +17,23 @@ export class Product {
     }
 
     displayDetails(): string {
-        return `${this.id} | ${this.title} | Category: ${this.category} | Price: $${this.price}`
+        const discountedPrice = this.getPriceWithDiscount();
+        const taxAmount = calculateTax(discountedPrice, this.category);
+        const finalPrice = discountedPrice + taxAmount;
+        
+        return `
+    ---------------------------
+    ID: ${this.id}
+    Name: ${this.title}
+
+    Price: $${this.price}
+    Discount: ${this.discountPercentage}%
+    Price After Discount: ${discountedPrice.toFixed(2)}
+
+    Tax: $${taxAmount.toFixed(2)}
+    Final Price: $${finalPrice.toFixed(2)}
+    ----------------------------
+        `
     }
 
     getPriceWithDiscount(): number {
