@@ -1,6 +1,6 @@
 import { CustomError } from "../utils/errorHandler.js";
 
-async function getProductById(id:number) {
+export async function getProductById(id:number) {
     try {
         const response = await fetch(`https://dummyjson.com/products/${id}`)
         if(!response) {
@@ -17,3 +17,5 @@ async function getProductById(id:number) {
         }
     }
 }
+
+getProductById(1);
