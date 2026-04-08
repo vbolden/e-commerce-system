@@ -3,7 +3,7 @@ import { CustomError } from "../utils/errorHandler.js";
 export async function getProduct() {
     try {
         const response = await fetch(`https://dummyjson.com/products/1`)
-        if(!response) {
+        if(!response.ok) {
             throw new CustomError("Product not found", "APIError");
         }
         const data = await response.json();
