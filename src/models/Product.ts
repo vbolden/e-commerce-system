@@ -1,31 +1,23 @@
 export class Product {
     id: number;
     title: string;
-    description: string;
     category: string;
     price: number;
-    discount: number;
-    rating: number;
-    sku: string;
-    reviews: string[];
+    discountPercentage: number;
 
-    constructor(id: number, title: string, description: string, category: string, price: number, discount: number, rating: number, sku: string, reviews: string[]) {
+    constructor(id: number, title: string, category: string, price: number, discountPercentage: number) {
         this.id = id;
         this.title = title;
-        this.description = description;
         this.category = category;
         this.price = price;
-        this.discount = discount;
-        this.rating = rating;
-        this.sku = sku;
-        this.reviews = reviews;
+        this.discountPercentage = discountPercentage;
     }
 
     displayDetails(): string {
-        return ``
+        return `${this.id} | ${this.title} | Category: ${this.category} | Price: $${this.price} with a discount of ${this.discountPercentage}`
     }
 
     getPriceWithDiscount(): number {
-        return this.price - (this.price * this.discount)
+        return this.price - (this.price * this.discountPercentage)
     } 
 }
