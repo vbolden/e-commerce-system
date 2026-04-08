@@ -16,7 +16,7 @@ export class Product {
     }
 
     displayDetails(): string {
-        return `${this.id} | ${this.title} | Category: ${this.category} | Price: $${this.price} with a discount of ${this.discountPercentage}`
+        return `${this.id} | ${this.title} | Category: ${this.category} | Price: $${this.price}`
     }
 
     getPriceWithDiscount(): number {
