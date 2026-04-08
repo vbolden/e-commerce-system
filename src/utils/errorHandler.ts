@@ -1,6 +1,6 @@
-class ApiError extends Error {
-    constructor(message: string) {
-        super(message)
-        this.name = "API Error"
-    }
+export class CustomError extends Error {
+   constructor(message: string, type: string) {
+    super(message)
+    this.name = type;
+   }
 }
